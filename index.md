@@ -177,3 +177,55 @@
 
 </div>
 
+<button id="theme-toggle" style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+">
+🌙 夜间模式
+</button>
+
+<style>
+body.dark-mode {
+  background: #111 !important;
+  color: #ddd !important;
+}
+
+body.dark-mode .page-header {
+  background: #222 !important;
+  color: #fff !important;
+}
+
+body.dark-mode a {
+  color: #4ea3ff !important;
+}
+
+body.dark-mode .crypto-card,
+body.dark-mode .youtube-card {
+  background: #1a1a1a !important;
+  color: #eee !important;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1) !important;
+}
+
+body.dark-mode .wallet {
+  background: #333 !important;
+  color: #ddd !important;
+}
+</style>
+
+<script>
+const btn = document.getElementById("theme-toggle");
+btn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  btn.textContent = document.body.classList.contains("dark-mode")
+    ? "☀️ 白天模式"
+    : "🌙 夜间模式";
+});
+</script>
